@@ -2,7 +2,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo docker pull gcc
+      - su
+      - docker pull gcc
   build:
     commands:
       - docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc make

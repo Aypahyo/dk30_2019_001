@@ -1,9 +1,11 @@
 version: 0.2
 phases:
-install:
- - docker pull gcc
-build:
- - docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc make
+  install:
+    commands:
+      - docker pull gcc
+  build:
+    commands:
+      - docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc make
 artifacts:
   files:
-   - ./main
+    - ./main

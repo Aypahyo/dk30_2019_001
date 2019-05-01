@@ -1,9 +1,8 @@
 version: 0.2
-run-as: ec2-user
 phases:
   install:
     commands:
-      - docker pull gcc
+      - sudo docker pull gcc
   build:
     commands:
       - docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc make

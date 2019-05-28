@@ -3,10 +3,10 @@ phases:
   install:
     commands:
       - su
+      - dockerd
       - docker pull gcc
   build:
     commands:
-      - dockerd
       - docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp gcc make
 artifacts:
   files:
